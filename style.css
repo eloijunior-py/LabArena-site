@@ -1,0 +1,116 @@
+/* --- Configurações Gerais e Cores --- */
+
+/* Variáveis de Cor (CSS Variables) - Mude aqui para mudar o site todo */
+:root {
+    --cor-primaria: #005A9C;     /* Um azul escuro (educacional) */
+    --cor-secundaria: #f0f8ff;  /* Um azul bem claro (fundo) */
+    --cor-destaque: #FFD700;    /* Um amarelo/ouro para botões */
+    --cor-texto: #333333;       /* Cor do texto principal (cinza escuro) */
+    --cor-fundo-claro: #FFFFFF; /* Branco */
+}
+
+/* Reseta margens e define a fonte principal */
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte que importamos no HTML */
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* --- 1. O CABEÇALHO (Estilo) --- */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo-claro);
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700;
+}
+
+header nav a {
+    color: var(--cor-fundo-claro);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 300;
+}
+
+/* --- 2. O CONTEÚDO PRINCIPAL (Layout) --- */
+/* Centraliza o conteúdo principal na página */
+main {
+    max-width: 960px; /* Largura máxima */
+    margin: 2rem auto;  /* Centraliza horizontalmente (auto) */
+    padding: 0 1rem;
+}
+
+main h2 {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+}
+
+/* --- Layout dos "Cards" de Simulação --- */
+.sim-grid {
+    display: grid;
+    /* Cria um grid responsivo: tenta encaixar colunas de 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Espaço entre os cards */
+}
+
+.sim-card {
+    background-color: var(--cor-fundo-claro);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s; /* Animação ao passar o mouse */
+}
+
+.sim-card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" */
+}
+
+.sim-card h3 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+}
+
+/* Botão de abrir simulação */
+.sim-button {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.sim-button:hover {
+    filter: brightness(0.9); /* Escurece um pouco */
+}
+
+/* Estilo do card "Em Breve" */
+.sim-card-placeholder {
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    color: #888;
+    display: grid;
+    place-items: center;
+    min-height: 150px;
+}
+
+/* --- 3. O RODAPÉ (Estilo) --- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #e0e0e0;
+    color: #555;
+    margin-top: 2rem;
+}
