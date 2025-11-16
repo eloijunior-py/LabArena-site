@@ -1,28 +1,4 @@
-/* Fonte e reset básico */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header {
-    background-color: #005A9C;
-    color: white;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-header a {
-    color: white;
-    text-decoration: none;
-    font-weight: 300;
-}
+/* ... (Estilos anteriores de body, header, etc. continuam iguais) ... */
 
 /* Container principal da simulação */
 .sim-container {
@@ -34,6 +10,8 @@ header a {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /* Define uma largura máxima para o container */
+    max-width: 820px; 
 }
 
 /* A tela da simulação */
@@ -41,37 +19,64 @@ header a {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%; /* Faz o canvas principal ser responsivo */
+    height: auto;
+}
+
+/* --- NOVO: Container dos Gráficos --- */
+.charts-container {
+    display: flex;
+    justify-content: space-between; /* Espaça os gráficos */
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem; /* Espaço entre os gráficos */
+}
+
+.chart-wrapper {
+    flex: 1; /* Faz os dois gráficos ocuparem o espaço igualmente */
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    /* Isso ajuda a manter os canvas responsivos */
+    width: 50%; 
+}
+
+.chart-wrapper canvas {
+    width: 100%;
+    height: auto;
 }
 
 /* Área de controles */
 .controls {
     display: flex;
-    flex-wrap: wrap; /* Faz os controles irem para baixo em telas pequenas */
+    flex-wrap: wrap; 
     gap: 1.5rem;
     padding: 1.5rem;
     margin-top: 1rem;
     background-color: #fafafa;
     border-radius: 4px;
-    width: 760px; /* Alinha com a largura do canvas */
+    width: 100%; /* Ocupa a largura total do container */
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
 }
 
 .control-group {
-    flex: 1; /* Faz os grupos crescerem igualmente */
+    flex: 1; 
     min-width: 200px;
 }
+/* ... (Resto dos estilos de .control-group, label, input, etc.) ... */
 
-.control-group label {
-    font-weight: 700;
-    display: block;
-    margin-bottom: 5px;
-}
 
-input[type="range"] {
-    width: 100%;
+/* --- NOVO: Grupo de Botões --- */
+.button-group {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    align-items: center; /* Alinha os botões verticalmente */
+    min-width: 150px;
 }
 
 button {
-    background-color: #FFD700;
+    background-color: #ddd; /* Cor padrão (Resetar) */
     color: #333;
     border: none;
     padding: 10px 20px;
@@ -79,9 +84,16 @@ button {
     font-weight: 700;
     border-radius: 5px;
     cursor: pointer;
-    transition: filter 0.2s;
+    transition: filter 0.2s, background-color 0.2s;
+    flex: 1; /* Faz os botões terem o mesmo tamanho */
 }
 
 button:hover {
     filter: brightness(0.9);
+}
+
+/* Cor especial para o botão Iniciar */
+button.start {
+    background-color: #28a745; /* Verde */
+    color: white;
 }
