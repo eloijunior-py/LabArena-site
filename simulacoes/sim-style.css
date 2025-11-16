@@ -1,0 +1,87 @@
+/* Fonte e reset básico */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #005A9C;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+/* Container principal da simulação */
+.sim-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* A tela da simulação */
+#simCanvas {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Área de controles */
+.controls {
+    display: flex;
+    flex-wrap: wrap; /* Faz os controles irem para baixo em telas pequenas */
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    background-color: #fafafa;
+    border-radius: 4px;
+    width: 760px; /* Alinha com a largura do canvas */
+}
+
+.control-group {
+    flex: 1; /* Faz os grupos crescerem igualmente */
+    min-width: 200px;
+}
+
+.control-group label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+button {
+    background-color: #FFD700;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
